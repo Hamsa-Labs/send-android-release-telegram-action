@@ -49,3 +49,16 @@ jobs:
             🚀 *New Android Release!*
             Triggered by ${{ github.actor }}
 ```
+
+## 📥 How to Get Your Telegram `chat_id`
+
+1. **Start a chat with your bot** (search by username).
+2. Send a message like "Hello".
+3. Open this URL: `https://api.telegram.org/bot<TOKEN>/getUpdates` (replace `<TOKEN>` with your bot token) in your browser:
+4. In the response, look for:
+    ```json
+    "chat": {
+    "id": 123456789,
+    ...
+    }
+    ```
