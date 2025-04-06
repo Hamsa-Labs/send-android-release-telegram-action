@@ -41,7 +41,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build & Send to Telegram
-        uses: nebiyuelias1/send-android-release-telegram-action@v1.0.0
+        uses: nebiyuelias1/send-android-release-telegram-action@v1.0.1
         with:
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
