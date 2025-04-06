@@ -11,6 +11,9 @@ MESSAGE="$INPUT_MESSAGE"
 echo "Telegram Chat: $CHAT_ID"
 echo "Build message: $MESSAGE"
 
+# Make gradlew executable
+chmod +x ./gradlew
+
 # Clone repo source into the container's workspace (mounted automatically)
 echo "🔧 Running Gradle assembleRelease..."
 ./gradlew assembleRelease
