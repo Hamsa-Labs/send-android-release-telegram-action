@@ -52,7 +52,7 @@ jobs:
 
 ## 📥 How to Get Your Telegram `chat_id`
 
-1. Create a bot using a bot father or use an already existing bot. 
+1. Create a bot using bot father or use an already existing bot. 
 2. **Start a chat with your bot** (search by username).
 3. Send a message like "Hello".
 4. Open this URL: `https://api.telegram.org/bot<TOKEN>/getUpdates` (replace `<TOKEN>` with your bot token) in your browser:
