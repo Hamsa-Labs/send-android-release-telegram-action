@@ -58,7 +58,7 @@ jobs:
 4. In the response, look for:
     ```json
     "chat": {
-    "id": 123456789,
+        "id": 123456789,
     ...
     }
     ```
