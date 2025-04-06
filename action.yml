@@ -2,17 +2,26 @@ name: 'Send Android Release to Telegram'
 description: 'Send APK or AAB files to a Telegram chat/channel'
 author: 'Nebiyu Elias'
 inputs:
-  token:
-    description: 'Telegram Bot Token'
+  keystore_base64:
+    description: "Base64-encoded Android keystore"
+    required: true
+  keystore_password:
+    description: "Keystore password"
+    required: true
+  key_alias:
+    description: "Alias of the key"
+    required: true
+  key_password:
+    description: "Password for the key"
     required: true
   chat_id:
-    description: 'Telegram Chat ID (use -100xxx for channels/groups)'
+    description: "Telegram chat ID"
     required: true
-  file:
-    description: 'Path to APK or AAB file'
+  bot_token:
+    description: "Telegram Bot API Token"
     required: true
   message:
-    description: 'Optional message to include'
+    description: "Message to send"
     required: false
 runs:
   using: 'docker'

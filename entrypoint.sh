@@ -11,6 +11,14 @@ MESSAGE="$INPUT_MESSAGE"
 echo "Telegram Chat: $CHAT_ID"
 echo "Build message: $MESSAGE"
 
+# Write and decode the keystore
+echo "$KEYSTORE_BASE64" | base64 -d > keystore.jks
+
+# Export environment variables for Gradle signing config
+export KEYSTORE_PASSWORD="$KEYSTORE_PASSWORD"
+export KEY_ALIAS="$KEY_ALIAS"
+export KEY_PASSWORD="$KEY_PASSWORD"
+
 # Make gradlew executable
 chmod +x ./gradlew
 

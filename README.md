@@ -41,13 +41,15 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build & Send to Telegram
-        uses: nebiyuelias1/send-android-release-telegram-action@v1.0.0
+        uses: nebiyuelias1/send-android-release-telegram-action@v1.0.1
         with:
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          keystore_base64: ${{ secrets.KEYSTORE_BASE64 }}
+          keystore_password: ${{ secrets.KEYSTORE_PASSWORD }}
+          key_alias: ${{ secrets.KEY_ALIAS }}
+          key_password: ${{ secrets.KEY_PASSWORD }}
           chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
-          message: |
-            🚀 *New Android Release!*
-            Triggered by ${{ github.actor }}
+          bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: "🚀 New Android release by ${{ github.actor }}!"
 ```
 
 ## 📥 How to Get Your Telegram `chat_id`
