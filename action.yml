@@ -1,0 +1,22 @@
+name: 'Send Android Release to Telegram'
+description: 'Send APK or AAB files to a Telegram chat/channel'
+author: 'Nebiyu Elias'
+inputs:
+  token:
+    description: 'Telegram Bot Token'
+    required: true
+  chat_id:
+    description: 'Telegram Chat ID (use -100xxx for channels/groups)'
+    required: true
+  file:
+    description: 'Path to APK or AAB file'
+    required: true
+  message:
+    description: 'Optional message to include'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'send'
+  color: 'blue'
