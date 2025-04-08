@@ -12,7 +12,8 @@ echo "Telegram Chat: $CHAT_ID"
 echo "Build message: $MESSAGE"
 
 # Write and decode the keystore
-echo "$KEYSTORE_BASE64" | base64 -d > keystore.jks
+mkdir app
+echo "$KEYSTORE_BASE64" | base64 -d > app/keystore.jks
 
 # Export environment variables for Gradle signing config
 export KEYSTORE_PASSWORD="$KEYSTORE_PASSWORD"
