@@ -71,6 +71,11 @@ jobs:
           chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
           bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           message: "🚀 New Android release by ${{ github.actor }}!"
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEYSTORE_FILE: keystore.jks
 ```
 
 ## 📥 How to Get Your Telegram `chat_id`
