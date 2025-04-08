@@ -1,7 +1,6 @@
 # 📦 Build Android App & Send to Telegram
 
 A custom GitHub Action that builds your Android project (Release APK) and sends it to a Telegram chat or channel via a bot.  
-No JavaScript. No external dependencies. 100% Docker-based.
 
 ---
 
