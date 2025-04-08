@@ -45,6 +45,8 @@ To set these secrets:
 2. Navigate to **Settings** > **Secrets and variables** > **Actions**.
 3. Click **New repository secret** and add each secret listed above.
 
+---
+
 ## 📸 Example
 
 ```yaml
@@ -121,6 +123,9 @@ android {
     }
 }
 ```
+
+---
+
 ## 📥 How to Get Your Telegram `chat_id`
 
 1. Create a bot using bot father or use an already existing bot. 
@@ -133,6 +138,8 @@ android {
         "id": 123456789,
     }
     ```
+
+---
 
 ## 🔑 How to Create a Keystore File
 
