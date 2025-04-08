@@ -62,7 +62,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build & Send to Telegram
-        uses: nebiyuelias1/send-android-release-telegram-action@v1.0.5
+        uses: nebiyuelias1/send-android-release-telegram-action@v1.0.6
         with:
           keystore_base64: ${{ secrets.KEYSTORE_BASE64 }}
           keystore_password: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -73,6 +73,53 @@ jobs:
           message: "🚀 New Android release by ${{ github.actor }}!"
 ```
 
+## ✍️ Adding Signing Config to Your Gradle File
+
+To build and sign your Android app, you need to configure the signing settings in your `build.gradle` file. Below are the steps for both **Groovy DSL** and **Kotlin DSL** formats.
+
+### For Groovy DSL (`build.gradle`):
+```gradle
+android {
+    ...
+    signingConfigs {
+        release {
+            keyAlias System.getenv("KEY_ALIAS")
+            keyPassword System.getenv("KEY_PASSWORD")
+            storeFile file("release-key.jks")
+            storePassword System.getenv("KEYSTORE_PASSWORD")
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true // Enable ProGuard or R8 for release builds
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+```
+
+### For Kotlin DSL (build.gradle.kts):
+```gradle
+android {
+    ...
+    signingConfigs {
+        create("release") {
+            keyAlias = System.getenv("KEY_ALIAS")
+            keyPassword = System.getenv("KEY_PASSWORD")
+            storeFile = file("release-key.jks")
+            storePassword = System.getenv("KEYSTORE_PASSWORD")
+        }
+    }
+    buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = true // Enable ProGuard or R8 for release builds
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+}
+```
 ## 📥 How to Get Your Telegram `chat_id`
 
 1. Create a bot using bot father or use an already existing bot. 
