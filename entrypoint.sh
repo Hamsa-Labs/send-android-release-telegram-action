@@ -6,6 +6,10 @@ echo "📦 Starting Android build and Telegram send..."
 TOKEN="$INPUT_TOKEN"
 CHAT_ID="$INPUT_CHAT_ID"
 MESSAGE="$INPUT_MESSAGE"
+KEYSTORE_BASE64="$INPUT_KEYSTORE_BASE64"
+KEYSTORE_PASSWORD="$INPUT_KEYSTORE_PASSWORD"
+KEY_ALIAS="$INPUT_KEY_ALIAS"
+KEY_PASSWORD="$INPUT_KEY_PASSWORD"
 
 # Print inputs
 echo "Telegram Chat: $CHAT_ID"
@@ -13,11 +17,6 @@ echo "Build message: $MESSAGE"
 
 # Write and decode the keystore
 echo "$KEYSTORE_BASE64" | base64 -d > ./app/keystore.jks
-
-# Export environment variables for Gradle signing config
-export KEYSTORE_PASSWORD="$KEYSTORE_PASSWORD"
-export KEY_ALIAS="$KEY_ALIAS"
-export KEY_PASSWORD="$KEY_PASSWORD"
 
 # Make gradlew executable
 chmod +x ./gradlew
