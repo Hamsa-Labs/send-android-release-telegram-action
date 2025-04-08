@@ -99,7 +99,7 @@ android {
 }
 ```
 
-### For Kotlin DSL (build.gradle.kts):
+### For Kotlin DSL (`build.gradle.kts`):
 
 ```gradle
 android {
