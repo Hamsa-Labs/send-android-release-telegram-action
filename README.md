@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build & Send to Telegram
-        uses: nebiyuelias1/send-android-release-telegram-action@v1.0.6
+        uses: nebiyuelias1/send-android-release-telegram-action@v1.0.7
         with:
           keystore_base64: ${{ secrets.KEYSTORE_BASE64 }}
           keystore_password: ${{ secrets.KEYSTORE_PASSWORD }}
