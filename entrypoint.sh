@@ -3,7 +3,7 @@ set -e
 
 echo "📦 Starting Android build and Telegram send..."
 
-TOKEN="$INPUT_TOKEN"
+TOKEN="$INPUT_BOT_TOKEN"
 CHAT_ID="$INPUT_CHAT_ID"
 MESSAGE="$INPUT_MESSAGE"
 KEYSTORE_BASE64="$INPUT_KEYSTORE_BASE64"
