@@ -167,3 +167,7 @@ To build and sign your Android app, you need a keystore file. Follow these steps
 Keep your keystore file and passwords secure. Do not share them publicly.
 Use the same alias and passwords when configuring the GitHub secrets.
 
+## 📝 License
+
+This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for details.
+
